@@ -10,11 +10,11 @@ def index(request):
 
 	if request.method == 'POST':
 		city1 = request.POST['city1']
-		city2 = request.POST.get('city2', None) #city2 is not mandatory. If city2 field is empty value is None
+		city22 = request.POST.get('city2', None) #city2 is not mandatory. If city2 field is empty value is None
 		weather_data1, forecast_data1 = get_current_forecast_weather(city1, API_KEY, current_weather_url, forecast_weather_url)
 
-		if city2:
-			weather_data2, forecast_data2 = get_current_forecast_weather(city2, API_KEY, current_weather_url, forecast_weather_url)
+		if city22:
+			weather_data2, forecast_data2 = get_current_forecast_weather(city22, API_KEY, current_weather_url, forecast_weather_url)
 		else:
 			weather_data2, forecast_data2 = None, None
 
